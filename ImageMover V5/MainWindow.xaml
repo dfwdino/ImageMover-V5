@@ -1,0 +1,32 @@
+﻿<Window x:Class="ImageMover_V5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ImageMover_V5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="515.5" Width="822.753" Loaded="PageLoaded">
+    <Grid>
+        <Image x:Name="SelectedPhoto" Margin="0,0,10,41" Height="186" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="235"/>
+        <ListView x:Name="Thumbnails" Margin="10,10,250,41" >
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Width="{Binding (FrameworkElement.ActualWidth), RelativeSource={RelativeSource AncestorType=ScrollContentPresenter}}"
+                       ItemWidth="{Binding (ListView.View).ItemWidth, RelativeSource={RelativeSource AncestorType=ListView}}"
+                       MinWidth="{Binding ItemWidth, RelativeSource={RelativeSource Self}}"
+                       ItemHeight="{Binding (ListView.View).ItemHeight, RelativeSource={RelativeSource AncestorType=ListView}}" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+
+        </ListView>
+        <Label x:Name="lblCurrentLocation" Content="" HorizontalAlignment="Left" Margin="10,0,0,10" Width="484" Height="26" VerticalAlignment="Bottom"/>
+        <Label x:Name="lblCurrentFile" Content="" Margin="0,0,10,10" HorizontalAlignment="Right" Width="235" Height="26" VerticalAlignment="Bottom" FlowDirection="RightToLeft"/>
+        <Button x:Name="btnLookIn" Content="Look In" Margin="0,11,49,0" VerticalAlignment="Top" Click="btnLookIn_Click" HorizontalAlignment="Right" Width="75"/>
+        <TextBox x:Name="txtShowNumber" Height="20" Margin="0,11,7,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" SnapsToDevicePixels="True" HorizontalAlignment="Right" Width="37"/>
+        <Button x:Name="btnMoveImageTo" Content="Move To" Margin="0,41,171,0" VerticalAlignment="Top" Click="btnMoveImageTo_Click" HorizontalAlignment="Right" Width="68"/>
+        <ComboBox x:Name="cmbMoveToLocation" Margin="0,66,9,0" VerticalAlignment="Top" Height="30" HorizontalAlignment="Right" Width="230"/>
+        <Button x:Name="btnAddMoveLocation" Content="Add" HorizontalAlignment="Right" Margin="0,101,164,0" VerticalAlignment="Top" Width="75" Click="btnAddMoveLocation_Click"/>
+        <Button x:Name="btnDeleteMoveTo" Content="Delete" Margin="0,101,7,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Click="btnDeleteMoveTo_Click"/>
+
+    </Grid>
+</Window>
