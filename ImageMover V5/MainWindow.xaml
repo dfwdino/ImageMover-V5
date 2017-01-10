@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ImageMover_V5"
         mc:Ignorable="d"
-        Title="MainWindow" Height="515.5" Width="822.753" Loaded="PageLoaded">
+        Title="MainWindow" Height="515.5" Width="822.753" Loaded="PageLoaded" Closing="Window_Closing">
     <Grid>
         <Image x:Name="SelectedPhoto" Margin="0,0,10,41" Height="186" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="235"/>
         <ListView x:Name="Thumbnails" Margin="10,10,250,41" >
